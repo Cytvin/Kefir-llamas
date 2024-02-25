@@ -25,7 +25,7 @@ AnimatorState:
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
-  m_CycleOffsetParameter: 
+  m_CycleOffsetParameter: MoveSpeed
   m_TimeParameter: 
 --- !u!1101 &-3647150229201283128
 AnimatorStateTransition:

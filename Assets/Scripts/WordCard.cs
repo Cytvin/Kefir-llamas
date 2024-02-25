@@ -40,6 +40,7 @@ public class WordCard : MonoBehaviour
                 }
                 else
                 {
+                    transform.SetParent(_initialParrent);
                     _lastStaticPosition = transform.localPosition;
                 }
                 return;
@@ -56,7 +57,7 @@ public class WordCard : MonoBehaviour
         _rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, _initialHeight);
 
         _isTaken = true;
-        transform.SetParent(_initialParrent);
+        transform.SetParent(_initialParrent.parent);
     }
 
     public void Detach()

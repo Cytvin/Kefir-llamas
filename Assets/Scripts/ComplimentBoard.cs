@@ -39,10 +39,10 @@ public class ComplimentBoard : MonoBehaviour
         if(_playerBlocker.CanPlayerPass())
         {
             _playerBlocker.Pass();
-            MessagePopup.Instance.Show("Комплимент понравился ламам!\r\n" +
-                "Я могу пройти");
-            _complimentPopup.gameObject.SetActive(false);
             _player.SetMoveStateTo(true);
+            MessagePopup.Instance.Show("Комплимент понравился ламам!\r\n" +
+                "Я могу пройти!");
+            _complimentPopup.gameObject.SetActive(false);
         }
         else
         {
@@ -53,6 +53,11 @@ public class ComplimentBoard : MonoBehaviour
 
     public void AddWordCard(WordCard wordCard)
     {
+        if (_wordCards.Count == 0)
+        {
+            _complimentText.SetText("");
+        }
+
         _wordCards.Add(wordCard);
         _complimentText.text += $"{wordCard.Word} ";
         EnableDeleteButtonIfComplimentNotEmpty();

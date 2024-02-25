@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -10,7 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject _cameraHolder;
     [SerializeField]
-    private Vector3 _cameraOffset;
+    private GameObject _waypointHolder;
     [SerializeField]
     private float _movementSpeed = 10;
     [SerializeField]
@@ -29,7 +30,7 @@ public class Player : MonoBehaviour
             if (_movement.Equals(Vector3.zero) == false)
             {
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(_movement), Time.deltaTime * _rotationSpeed);
-                _animator.SetFloat("MoveSpeed", 15f);
+                _animator.SetFloat("MoveSpeed", _movementSpeed);
             }
             else
             {
@@ -43,6 +44,28 @@ public class Player : MonoBehaviour
         _isMoveEnable = moveState;
     }
 
+    public void CelebrateVictory()
+    {
+        _movement = Vector3.zero;
+        SetMoveStateTo(false);
+        _waypointHolder.SetActive(false);
+        StartCoroutine(nameof(Rotate));
+        _animator.SetFloat("MoveSpeed", 0);
+        _animator.SetTrigger("Win");
+    }
+
+    private IEnumerator Rotate()
+    {
+        Quaternion rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+
+        do
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * _rotationSpeed);
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+        while (transform.localRotation != rotation);
+    }
+
     private void FixedUpdate()
     {
         _movement = _movement.normalized * _movementSpeed * Time.fixedDeltaTime;
@@ -51,6 +74,6 @@ public class Player : MonoBehaviour
 
     private void LateUpdate()
     {
-        _cameraHolder.transform.position = transform.position + _cameraOffset;
+        _cameraHolder.transform.position = transform.position;
     }
 }

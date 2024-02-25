@@ -9,6 +9,8 @@ public class TalkWithLlamas : MonoBehaviour
     private GameObject _complimentPopup;
     [SerializeField]
     private Player _player;
+    [SerializeField]
+    private BoxCollider _trigger;
     private bool _canTalk = false;
 
     private void Update()
@@ -29,8 +31,11 @@ public class TalkWithLlamas : MonoBehaviour
                 "2 лама: Предпочитает медитативное ткачество изысканных ковров;\r\n" +
                 "3 лама: Владеет элитной химчисткой. Сильный аллергик, в том числе на персики;\r\n" +
                 "4 лама: Фанатеет от археологических приключения, особенно от исследования тайных тоннелей;\r\n" +
-                "5 лама: Коллекционирует экстравагантные расчески. Клаустрофоб.");
+                "5 лама: Коллекционирует экстравагантные расчески. Клаустрофоб.\r\n" +
+                "В голове такая каша.\r\n" +
+                "Придется что-то придумать!");
             _canTalk = false;
+            _trigger.enabled = false;
         }
     }
 

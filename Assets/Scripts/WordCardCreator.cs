@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 
 [Serializable]
-public class Spawner : MonoBehaviour
+public class WordCardCreator : MonoBehaviour
 {
     [Serializable]
     private class WordWithPoints

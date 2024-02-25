@@ -24,8 +24,6 @@ public class Llama : MonoBehaviour
                 _points += _wordWithPoints[word];
             }
         }
-
-        Debug.Log(_points);
     }
 
     public void SetWordWithPoints(Dictionary<string, int> dictionary)

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5831108439193105884}
   - component: {fileID: -5736425960971579743}
   m_Layer: 5
-  m_Name: WordBoard
+  m_Name: WordCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,6 @@ RectTransform:
   m_Children:
   - {fileID: 4749457090630745969}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -152,7 +151,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3913530759441580878}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -187,10 +185,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u044F"
+  m_text: "\u042F"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 092c193a69ac91349b8cd3c52ce03593, type: 2}
-  m_sharedMaterial: {fileID: 405928997732233998, guid: 092c193a69ac91349b8cd3c52ce03593, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b5eebf3cb80225f4c9d7f974fe2a7e22, type: 2}
+  m_sharedMaterial: {fileID: 2830130473635338823, guid: b5eebf3cb80225f4c9d7f974fe2a7e22, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
